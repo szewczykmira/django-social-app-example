@@ -25,7 +25,7 @@ SECRET_KEY = ')q0i%vyk)b3zvv7atxn#+d1e$r+$(@9n!yh3f2d&r0x2kixjt+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -126,9 +126,8 @@ STATIC_URL = '/static/'
 
 
 AUTHENTICATION_BACKENDS = (
-    #'social_core.backends.google.GoogleOAuth2',
     'socialapp.backends.google.CustomGoogleOAuth2',
-    'social_core.backends.facebook.FacebookOAuth2',
+    'socialapp.backends.facebook.CustomFacebookOAuth2',
     'social_core.backends.email.EmailAuth',
     'django.contrib.auth.backends.ModelBackend',
 )
