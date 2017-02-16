@@ -126,8 +126,8 @@ STATIC_URL = '/static/'
 
 
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.google.GoogleOpenId',
-    'social_core.backends.google.GoogleOAuth2',
+    #'social_core.backends.google.GoogleOAuth2',
+    'socialapp.backends.google.CustomGoogleOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.email.EmailAuth',
     'django.contrib.auth.backends.ModelBackend',
@@ -160,12 +160,3 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.user.user_details',
     'social_core.pipeline.debug.debug'
 )
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
-
-
-try:
-    from local_settings import *
-except ImportError:
-    pass
